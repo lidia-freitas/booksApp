@@ -17,11 +17,12 @@
     <title>Cloud - Books App - Editar livro</title>
 </head>
 <body>
+<?php $active_page  = 'gerenciar-livros' ?>
 <?php include '../partials/menu.php' ?>
 <?php include '../books/script_books_get_one.php' ?>
 
 <div class="container">
-    <div class="col-md-12"><?php include '../partials/feedbacks.php' ?></div>
+    <div class="col-md-12 text-center"><?php include '../partials/feedbacks.php' ?></div>
 
     <div class="page-header">
         <h1 class="text text-info">Editar livro</h1>

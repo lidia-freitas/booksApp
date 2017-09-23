@@ -2,11 +2,11 @@
 /**
  * Created by PhpStorm.
  * User: Lidia Freitas
- * Date: 20/09/2017
- * Time: 00:25
+ * Date: 23/09/2017
+ * Time: 13:32
  */
-
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -14,42 +14,35 @@
     <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../bootstrap/css/sticky-footer.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Cloud - Books App - Cadastrar novo livro</title>
+    <title>Cloud - Books App - Gerenciar perfil</title>
 </head>
 <body>
-<?php $active_page  = 'cadastrar-livros' ?>
 <?php include '../partials/menu.php' ?>
+<?php include 'script_users_get_one.php' ?>
 
 <div class="container">
-    <div class="col-md-12 text-center"><?php include '../partials/feedbacks.php' ?></div>
+    <div class="col-md-12"><?php include '../partials/feedbacks.php' ?></div>
 
     <div class="page-header">
-        <h1 class="text text-info">Cadastrar novo livro</h1>
+        <h1 class="text text-info">Gerenciar perfil</h1>
     </div>
 
-    <form class="col-lg-5" action="script_books_add.php" method="post">
+    <form class="col-lg-5" action="script_users_edit.php" method="post">
         <fieldset class="form-group">
-            <label for="title">Título</label>
-            <input type="text" class="form-control" name="title" id="title">
+            <label for="usuario">Nome de Usuário:</label>
+            <input type="text" name="name" id="usuario" class="form-control"
+                   value="<?php echo $row['name']; ?>">
         </fieldset>
 
         <fieldset class="form-group">
-            <label for="author">Autor</label>
-            <input type="text" class="form-control" name="author" id="author">
+            <label for="email">E-mail:</label>
+            <input type="email" name="email" id="email" class="form-control"
+                   value="<?php echo $row['email']; ?>">
         </fieldset>
 
         <fieldset class="form-group">
-            <label for="release-year">Ano de lançamento</label>
-            <input type="number" class="form-control" name="release-year" id="release-year">
-        </fieldset>
-
-        <fieldset class="form-group">
-            <label for="genre">Gênero</label>
-            <input type="text" class="form-control" name="genre" id="genre">
-        </fieldset>
-
-        <fieldset class="form-group">
-            <input type="submit" class="btn btn-primary btn-success" value="Cadastrar">
+            <input type="hidden" name="user_id" value="<?php echo $row['user_id']; ?>">
+            <input type="submit" class="btn btn-primary btn-warning" value="Salvar">
         </fieldset>
     </form>
 

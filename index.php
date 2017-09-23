@@ -13,6 +13,7 @@ $is_logged = isset($_SESSION['user']) && isset($_SESSION['password']);
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap/css/sticky-footer.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Cloud - Projeto Final - Últimos Livros</title>
 </head>
@@ -61,7 +62,7 @@ $is_logged = isset($_SESSION['user']) && isset($_SESSION['password']);
         <span><b>Professor:</b> Carlos Henrique Kuretzki</span>
         <br>
         <br>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button">
+        <p><a class="btn btn-primary btn-lg" href="https://github.com/lidia-freitas/booksApp" role="button" target="_blank">
                 <i class="fa fa-github" aria-hidden="true"></i> Github</a></p>
     </div>
 
@@ -94,8 +95,16 @@ $is_logged = isset($_SESSION['user']) && isset($_SESSION['password']);
         </table>
     </div>
 
-    <script src="bootstrap/js/jquery.min.js"></script>
-    <script src="bootstrap/js/bootstrap.js"></script>
 </div>
+
+<footer class="footer">
+    <div class="container">
+        <span class="pull-left text-muted">Trabalho final da disciplina de Computação em Nuvem</span>
+        <span class="pull-right">Lidia Freitas | Wellington Trojan</span>
+    </div>
+</footer>
+
+<script src="bootstrap/js/jquery.min.js"></script>
+<script src="bootstrap/js/bootstrap.js"></script>
 </body>
 </html>

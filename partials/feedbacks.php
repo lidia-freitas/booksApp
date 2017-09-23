@@ -11,16 +11,32 @@ if (isset($_GET['msg'])) {
     $msg = $_GET['msg'];
 
     if ($msg == 'empty') {
-        echo '<p class="alert alert-warning">ATENÇÃO: Preencha todos os campos do formulário</p>';
+        echo '<p class="alert alert-warning">
+              <i class="glyphicon glyphicon-exclamation-sign"></i> Por favor, preencha todos os campos do formulário
+              </p>';
     } else if ($msg == 'success') {
-        echo '<p class="alert alert-success">Cadastro realizado com sucesso!</p>';
+        echo '<p class="alert alert-success">
+              <i class="glyphicon glyphicon-ok-sign"></i> Cadastro realizado com sucesso!
+              </p>';
     } else if ($msg == 'error') {
-        echo '<p class="alert alert-danger">ATENÇÃO: Não foi possível realizar o cadastro</p>';
+        echo '<p class="alert alert-danger">
+              <i class="glyphicon glyphicon-remove-sign"></i> Não foi possível realizar o cadastro
+              </p>';
     } else if ($msg == "invalid") {
-        echo '<p class="alert alert-danger">Login ou senha inválidos. Tente novamente</p>';
+        echo '<p class="alert alert-danger">
+              <i class="glyphicon glyphicon-remove-sign"></i> Login ou senha inválidos. Por favor, tente novamente
+              </p>';
     } else if ($msg == "errorLogin") {
-        echo '<p class="alert alert-info">Por favor, efetue o login para acessar a área restrita:</p>';
+        echo '<p class="alert alert-info">
+              <i class="glyphicon glyphicon-info-sign"></i> Por favor, efetue o login para acessar a área restrita:
+              </p>';
     } else if ($msg == "not-found") {
-        echo '<p class="alert alert-warning">Não foi encontrado nenhum item correspondente a sua busca</p>';
+        echo '<p class="alert alert-warning">
+              <i class="glyphicon glyphicon-exclamation-sign"></i> Não foi encontrado nenhum item correspondente a sua busca
+              </p>';
+    } else if ($msg == "wrong-pass") {
+        echo '<p class="alert alert-warning">
+              <i class="glyphicon glyphicon-exclamation-sign"></i> A senha atual está incorreta
+              </p>';
     }
 }

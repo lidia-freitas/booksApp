@@ -17,11 +17,12 @@
     <title>Cloud - Books App - Gerenciar Livros</title>
 </head>
 <body>
+<?php $active_page  = 'gerenciar-livros' ?>
 <?php include '../partials/menu.php' ?>
 <?php include 'script_books_manage.php' ?>
 
 <div class="container">
-    <div class="col-md-12"><?php include '../partials/feedbacks.php' ?></div>
+    <div class="col-md-12 text-center"><?php include '../partials/feedbacks.php' ?></div>
 
     <div class="page-header">
         <h1 class="text text-info">Gerenciar livros </h1>

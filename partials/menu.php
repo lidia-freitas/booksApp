@@ -16,9 +16,9 @@ $is_logged = isset($_SESSION['user']) && isset($_SESSION['password']);
 
         <ul class="nav navbar-nav">
             <?php if ($is_logged): ?>
-                <li><a href="../books/books_list.php">Exibir livros</a></li>
-                <li><a href="../books/books_add.php">Cadastrar livros</a></li>
-                <li><a href="../books/books_manage.php">Gerenciar livros</a></li>
+                <li <?php if(isset($active_page) && $active_page == 'listar-livros'){echo ' class="active" ';} ?> ><a href="../books/books_list.php">Exibir livros</a></li>
+                <li <?php if(isset($active_page) && $active_page == 'cadastrar-livros'){echo ' class="active" ';} ?> ><a href="../books/books_add.php">Cadastrar livros</a></li>
+                <li <?php if(isset($active_page) && $active_page == 'gerenciar-livros'){echo ' class="active" ';} ?> ><a href="../books/books_manage.php">Gerenciar livros</a></li>
             <?php endif; ?>
         </ul>
 
@@ -30,6 +30,8 @@ $is_logged = isset($_SESSION['user']) && isset($_SESSION['password']);
                     <?php echo $_SESSION['user'] ?>  <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu">
+                    <li><a href="../users/users_edit.php"><i class="fa fa-cog" aria-hidden="true"></i> Gerenciar perfil</a></li>
+                    <li><a href="../users/users_change_password.php"><i class="fa fa-key" aria-hidden="true"></i> Alterar Senha</a></li>
                     <li><a href="../authentication/logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
                 </ul>
             </li>

@@ -17,11 +17,13 @@
     <title>Cloud - Books App - Lista de livros</title>
 </head>
 <body>
+<?php $active_page  = 'listar-livros' ?>
+
 <?php include '../partials/menu.php' ?>
 <?php include 'script_books_list.php' ?>
 
 <div class="container">
-    <div class="col-md-12"><?php include '../partials/feedbacks.php' ?></div>
+    <div class="col-md-12 text-center"><?php include '../partials/feedbacks.php' ?></div>
 
     <div class="page-header">
         <h1 class="text text-info">Lista de livros</h1>
