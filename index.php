@@ -13,6 +13,7 @@ $is_logged = isset($_SESSION['user']) && isset($_SESSION['password']);
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Cloud - Projeto Final - Últimos Livros</title>
 </head>
 <body>
@@ -21,7 +22,7 @@ $is_logged = isset($_SESSION['user']) && isset($_SESSION['password']);
 <nav class="navbar navbar-default navbar-static-top">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="index.php">Books App</a>
+            <a class="navbar-brand" href="index.php"><i class="fa fa-book" aria-hidden="true"></i> Books App</a>
         </div>
 
         <ul class="nav navbar-nav">
@@ -40,11 +41,11 @@ $is_logged = isset($_SESSION['user']) && isset($_SESSION['password']);
                     <?php echo $_SESSION['user'] ?>  <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a href="authentication/logout.php">Logout</a></li>
+                    <li><a href="authentication/logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
                 </ul>
             </li>
             <?php else: ?>
-            <li><a href="authentication/login.php">Login</a></li>
+            <li><a href="authentication/login.php"><i class="fa fa-sign-in" aria-hidden="true"></i>  Login</a></li>
             <?php endif; ?>
         </ul>
     </div>
@@ -52,13 +53,16 @@ $is_logged = isset($_SESSION['user']) && isset($_SESSION['password']);
 
 
 <div class="container">
-    <div class="jumbotron">
+    <div class="jumbotron text-center">
         <h1>
-            <i class="glyphicon glyphicon-book"></i>
+            <i class="fa fa-book" aria-hidden="true"></i>
             Books App</h1>
         <p>Trabalho final da disciplina de Computação em Nuvem</p>
         <span><b>Professor:</b> Carlos Henrique Kuretzki</span>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+        <br>
+        <br>
+        <p><a class="btn btn-primary btn-lg" href="#" role="button">
+                <i class="fa fa-github" aria-hidden="true"></i> Github</a></p>
     </div>
 
     <div class="col-md-10"><?php include 'partials/feedbacks.php' ?></div>

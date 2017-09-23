@@ -11,15 +11,19 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../bootstrap/css/sticky-footer.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Cloud - Projeto Final - Cadastro de Usuário</title>
 </head>
 <body>
 <?php include '../partials/menu.php' ?>
 
 <div class="container">
-    <div class="col-md-10"><?php include '../partials/feedbacks.php' ?></div>
+    <div class="col-md-6 col-md-offset-3 text-center"><?php include '../partials/feedbacks.php' ?></div>
 
-    <h1 class="col-md-4 col-md-offset-4 text text-info">Crie sua conta</h1>
+    <div class="col-md-4 col-md-offset-4 page-header">
+        <h1 class="text-info">Crie sua conta</h1>
+    </div>
 
     <form class="col-md-4 col-md-offset-4" name="cadastrar_usuario" action="script_register.php" method="post">
         <fieldset class="form-group">
@@ -40,7 +44,7 @@
         <fieldset class="form-group">
             <label for="role">Tipo de usuário</label>
             <select name="role" id="role" class="form-control">
-                <option value="0">Admin</option>
+                <option value="0">Administrador</option>
                 <option value="1">Usuário</option>
             </select>
         </fieldset>
@@ -48,4 +52,11 @@
         <input type="submit" name="cadastrar" class="btn btn-success" value="Cadastrar">
     </form>
 </div>
+
+<footer class="footer">
+    <div class="container">
+        <span class="pull-left text-muted">Trabalho final da disciplina de Computação em Nuvem</span>
+        <span class="pull-right">Lidia Freitas | Wellington Trojan</span>
+    </div>
+</footer>
 </body>

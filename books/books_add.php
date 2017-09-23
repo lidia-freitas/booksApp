@@ -12,7 +12,9 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css">
-    <title>PHP - Projeto Final - Cadastrar novo livro</title>
+    <link rel="stylesheet" href="../bootstrap/css/sticky-footer.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Cloud - Books App - Cadastrar novo livro</title>
 </head>
 <body>
 <?php include '../partials/menu.php' ?>
@@ -20,7 +22,9 @@
 <div class="container">
     <div class="col-md-12"><?php include '../partials/feedbacks.php' ?></div>
 
-    <h1 class="col-md-12 text text-info">Cadastrar novo livro</h1>
+    <div class="page-header">
+        <h1 class="text text-info">Cadastrar novo livro</h1>
+    </div>
 
     <form class="col-lg-5" action="script_books_add.php" method="post">
         <fieldset class="form-group">
@@ -44,12 +48,20 @@
         </fieldset>
 
         <fieldset class="form-group">
-            <input type="submit" class="btn btn-primary" value="Cadastrar">
+            <input type="submit" class="btn btn-primary btn-success" value="Cadastrar">
         </fieldset>
     </form>
 
-    <script src="../bootstrap/js/jquery.min.js"></script>
-    <script src="../bootstrap/js/bootstrap.js"></script>
 </div>
+
+<footer class="footer">
+    <div class="container">
+        <span class="pull-left text-muted">Trabalho final da disciplina de Computação em Nuvem</span>
+        <span class="pull-right">Lidia Freitas | Wellington Trojan</span>
+    </div>
+</footer>
+
+<script src="../bootstrap/js/jquery.min.js"></script>
+<script src="../bootstrap/js/bootstrap.js"></script>
 </body>
 </html>
