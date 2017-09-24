@@ -41,7 +41,10 @@ $is_logged = isset($_SESSION['user']) && isset($_SESSION['password']);
                    aria-expanded="false">
                     <?php echo $_SESSION['user'] ?>  <span class="caret"></span>
                 </a>
+
                 <ul class="dropdown-menu">
+                    <li><a href="users/users_edit.php"><i class="fa fa-cog" aria-hidden="true"></i> Gerenciar perfil</a></li>
+                    <li><a href="users/users_change_password.php"><i class="fa fa-key" aria-hidden="true"></i> Alterar Senha</a></li>
                     <li><a href="authentication/logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
                 </ul>
             </li>
