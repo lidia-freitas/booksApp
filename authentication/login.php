@@ -10,6 +10,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../bootstrap/css/sticky-footer.css">
@@ -43,8 +44,8 @@
 
 <footer class="footer">
     <div class="container">
-        <span class="pull-left text-muted">Trabalho final da disciplina de Computação em Nuvem</span>
-        <span class="pull-right">Lidia Freitas | Wellington Trojan</span>
+        <small class="pull-left text-muted">Trabalho final da disciplina de Computação em Nuvem</small>
+        <small class="pull-right">Lidia Freitas | Wellington Trojan</small>
     </div>
 </footer>
 

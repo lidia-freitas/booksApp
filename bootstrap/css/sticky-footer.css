@@ -19,3 +19,19 @@ body {
 }
 
 
+@media screen and (max-width: 500px) {
+    body {
+        /* Margin bottom by footer height */
+        margin-bottom: 150px;
+    }
+
+    .footer {
+        height: 120px;
+    }
+
+    .footer small{
+        display: block;
+        text-align: center !important;
+        float: none !important;
+    }
+}
