@@ -6,7 +6,7 @@
  * Time: 15:46
  */
 
-include '../lock.php';
+include $_SERVER["DOCUMENT_ROOT"] . '/booksApp/lock.php';
 
 if ($_POST['user_id'] != $_SESSION['user_id']) {
     header('location:users_edit.php?msg=denied');
@@ -21,7 +21,7 @@ if (empty($_POST['old_password']) || empty($_POST['new_password'])) {
     if (crypt($old_password, $_SESSION['password']) != $_SESSION['password']) {
         header('location:users_change_password.php?msg=wrong-pass');
     } else {
-        include '../conn.php';
+        include $_SERVER["DOCUMENT_ROOT"] . '/booksApp/conn.php';
         $security = crypt($new_password, '');
 
         $sql = "UPDATE users

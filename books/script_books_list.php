@@ -6,7 +6,7 @@
  * Time: 19:00
  */
 
-include '../conn.php';
+include $_SERVER["DOCUMENT_ROOT"] . '/booksApp/conn.php';
 
 $getData = "SELECT book_id, title, author, genre, releaseYear, name
             FROM books

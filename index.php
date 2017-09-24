@@ -1,4 +1,4 @@
-<?php include 'authentication/verify_session.php';
+<?php include $_SERVER["DOCUMENT_ROOT"] . '/booksApp/authentication/verify_session.php';
 /**
  * Created by PhpStorm.
  * User: Lidia Freitas
@@ -18,7 +18,7 @@ $is_logged = isset($_SESSION['user']) && isset($_SESSION['password']);
     <title>Cloud - Projeto Final - Últimos Livros</title>
 </head>
 <body>
-<?php include 'script_index.php' ?>
+<?php include $_SERVER["DOCUMENT_ROOT"] .  '/booksApp/script_index.php' ?>
 
 <nav class="navbar navbar-default navbar-static-top">
     <div class="container-fluid">
@@ -55,6 +55,8 @@ $is_logged = isset($_SESSION['user']) && isset($_SESSION['password']);
 
 <div class="container">
     <div class="jumbotron text-center">
+        <?php echo $_SERVER["DOCUMENT_ROOT"]; ?> <br>
+        <?php echo dirname(__FILE__); ?>
         <h1>
             <i class="fa fa-book" aria-hidden="true"></i>
             Books App</h1>
@@ -66,7 +68,7 @@ $is_logged = isset($_SESSION['user']) && isset($_SESSION['password']);
                 <i class="fa fa-github" aria-hidden="true"></i> Github</a></p>
     </div>
 
-    <div class="col-md-10"><?php include 'partials/feedbacks.php' ?></div>
+    <div class="col-md-10"><?php include $_SERVER["DOCUMENT_ROOT"] . '/booksApp/partials/feedbacks.php' ?></div>
 
     <h1 class="col-md-12 text text-info">Últimos livros</h1>
 

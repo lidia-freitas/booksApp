@@ -6,7 +6,7 @@
  * Time: 13:32
  */
 
-include '../lock.php';
+include $_SERVER["DOCUMENT_ROOT"] . '/booksApp/lock.php';
 
 if ($_POST['user_id'] != $_SESSION['user_id']) {
     header('location:users_edit.php?msg=denied');
@@ -18,7 +18,7 @@ if (empty($_POST['name']) || empty($_POST['email'])) {
     $name = $_POST['name'];
     $email = $_POST['email'];
 
-    include '../conn.php';
+    include $_SERVER["DOCUMENT_ROOT"] . '/booksApp/conn.php';
 
     $sql = "UPDATE users
                 SET name = '$name', email = '$email'

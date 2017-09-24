@@ -16,10 +16,10 @@
     <title>Cloud - Projeto Final - Login</title>
 </head>
 <body>
-<?php include '../partials/menu.php' ?>
+<?php include $_SERVER["DOCUMENT_ROOT"] . '/booksApp/partials/menu.php' ?>
 
 <div class="container">
-    <div class="col-md-6 col-md-offset-3 text-center"><?php include '../partials/feedbacks.php' ?></div>
+    <div class="col-md-6 col-md-offset-3 text-center"><?php include $_SERVER["DOCUMENT_ROOT"] . '/booksApp/partials/feedbacks.php' ?></div>
 
     <div class="col-md-4 col-md-offset-4 page-header">
         <h1 class="text-info">Login</h1>

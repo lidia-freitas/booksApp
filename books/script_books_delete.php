@@ -6,8 +6,8 @@
  * Time: 02:01
  */
 
-include '../lock.php';
-include '../conn.php';
+include $_SERVER["DOCUMENT_ROOT"] . '/booksApp/lock.php';
+include $_SERVER["DOCUMENT_ROOT"] . '/booksApp/conn.php';
 
 $itemId = $_GET['id'];
 

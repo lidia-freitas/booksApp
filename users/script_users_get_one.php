@@ -6,7 +6,7 @@
  * Time: 13:33
  */
 
-include '../conn.php';
+include $_SERVER["DOCUMENT_ROOT"] . '/booksApp/conn.php';
 
 $user_id = $_SESSION['user_id'];
 
