@@ -5,12 +5,16 @@
     max-height: 200px;
 }
 
+.books-list:nth-child(3n + 1) {
+    clear: both;
+}
+
 .books-list .cover {
     display: flex;
     align-items: flex-start;
 }
 
-.books-list .cover h1{
+.books-list .cover h1 {
     margin: 0;
     font-size: 100px;
     padding: 4px 15px;
@@ -20,12 +24,31 @@
     flex-grow: 1;
     padding: 0 15px;
 }
-.books-list .content .title{
+
+.books-list .content .title {
     font-weight: bold;
 }
 
-.books-list .content ul{
+.books-list .content ul {
     list-style-type: none;
     padding: 0;
     font-size: 12px;
+}
+
+.table th{
+    white-space: nowrap;
+}
+
+.table>tbody>tr>td{
+    vertical-align: middle;
+}
+
+.table th.action,
+.table td.action{
+    min-width: 155px;
+}
+
+.table .action-button {
+    float: left;
+    margin-right: 5px;
 }

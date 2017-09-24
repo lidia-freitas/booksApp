@@ -81,29 +81,32 @@ $is_logged = isset($_SESSION['user']) && isset($_SESSION['password']);
     </div>
 
     <br>
-
-    <?php while ($result = mysqli_fetch_assoc($query)) : ?>
-        <form class="col-md-4 books-list" action="script_vote.php" method="post">
-            <input type="hidden" name="book_id" value="<?php echo $result['book_id']?>">
-            <div class="cover">
-                <h1 class="text-muted thumbnail">
-                    <i class="fa fa-book" aria-hidden="true"></i>
-                </h1>
-            </div>
-            <div class="content">
-                <p class="text text-info title"><?php echo $result['title']; ?></p>
-                <ul>
-                    <li><strong>Autor: </strong><?php echo $result['author']; ?></li>
-                    <li><strong>Ano de Lançamento: </strong><?php echo $result['releaseYear']; ?></li>
-                    <li><strong>Gênero: </strong><?php echo $result['genre']; ?></li>
-                    <li><strong>Cadastrado por: </strong><?php echo $result['name']; ?></li>
-                </ul>
-                <p>
-                    <button class="btn btn-sm btn-danger vote"><i class="fa fa-heart"></i> <?php echo $result['votes'] ;?> votos</button>
-                </p>
-            </div>
-        </form>
-    <?php endwhile; ?>
+    <div>
+        <?php while ($result = mysqli_fetch_assoc($query)) : ?>
+            <form class="col-md-4 books-list" action="script_vote.php" method="post">
+                <input type="hidden" name="book_id" value="<?php echo $result['book_id'] ?>">
+                <div class="cover">
+                    <h1 class="text-muted thumbnail">
+                        <i class="fa fa-book" aria-hidden="true"></i>
+                    </h1>
+                </div>
+                <div class="content">
+                    <p class="text text-info title"><?php echo $result['title']; ?></p>
+                    <ul>
+                        <li><strong>Autor: </strong><?php echo $result['author']; ?></li>
+                        <li><strong>Ano de Lançamento: </strong><?php echo $result['releaseYear']; ?></li>
+                        <li><strong>Gênero: </strong><?php echo $result['genre']; ?></li>
+                        <li><strong>Cadastrado por: </strong><?php echo $result['name']; ?></li>
+                    </ul>
+                    <p>
+                        <button class="btn btn-sm btn-danger vote"><i
+                                    class="fa fa-heart"></i> <?php echo $result['votes']; ?> votos
+                        </button>
+                    </p>
+                </div>
+            </form>
+        <?php endwhile; ?>
+    </div>
 </div>
 
 <footer class="footer">

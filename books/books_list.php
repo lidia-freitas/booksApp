@@ -34,22 +34,27 @@
         <table class="table ">
             <thead>
             <tr>
-                <th>Id</th>
                 <th>Titulo</th>
                 <th>Autor</th>
-                <th>Ano de Lançamento</th>
+                <th>Lançamento</th>
                 <th>Gênero</th>
                 <th>Usuário</th>
             </tr>
             </thead>
             <tbody>
-            <?php while ($result = mysqli_fetch_assoc($query)) { ?>
+            <?php while ($result = mysqli_fetch_assoc($query)) : ?>
                 <tr>
-                    <?php foreach ($result as $value) { ?>
-                        <td><?php echo $value ?></td>
-                    <?php } ?>
+                    <td title="<?php echo $result['book_id']; ?>">
+                        <?php echo $result['title']; ?>
+                    </td>
+                    <td><?php echo $result['author']; ?></td>
+                    <td><?php echo $result['releaseYear']; ?></td>
+                    <td><?php echo $result['genre']; ?></td>
+                    <td><?php echo $result['name']; ?></td>
                 </tr>
-            <?php } ?>
+            <?php endwhile; ?>
+
+
             </tbody>
         </table>
     </div>

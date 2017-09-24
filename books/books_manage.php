@@ -13,6 +13,7 @@
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../bootstrap/css/sticky-footer.css">
+    <link rel="stylesheet" href="../assets/main.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Cloud - Books App - Gerenciar Livros</title>
 </head>
@@ -33,29 +34,30 @@
         <table class="table ">
             <thead>
             <tr>
-                <th>Id</th>
                 <th>Titulo</th>
                 <th>Autor</th>
-                <th>Ano de Lançamento</th>
+                <th>Lançamento</th>
                 <th>Gênero</th>
-                <th>Usuário ID</th>
                 <th>Usuário</th>
-                <th>Ações</th>
+                <th class="action">Ações</th>
             </tr>
             </thead>
             <tbody>
             <?php while ($result = mysqli_fetch_assoc($query)): ?>
                 <tr>
-                    <?php foreach ($result as $value): ?>
-                        <td><?php echo $value ?></td>
-                    <?php endforeach; ?>
-                    <td>
+                    <td><?php echo $result['title']; ?></td>
+                    <td><?php echo $result['author']; ?></td>
+                    <td><?php echo $result['releaseYear']; ?></td>
+                    <td><?php echo $result['genre']; ?></td>
+                    <td><?php echo $result['name']; ?></td>
+
+                    <td class="action">
                         <a href="books_edit.php?id=<?php echo $result['book_id'] ?>"
-                           class="btn btn-default btn-warning btn-xs">
+                           class="btn btn-default btn-warning btn-xs action-button">
                             <i class="glyphicon glyphicon-pencil"></i> Editar
                         </a>
                         <a href="script_books_delete.php?id=<?php echo $result['book_id']; ?>&user_id=<?php echo $result['user_id']; ?>"
-                           class="btn btn-default btn-danger btn-xs"
+                           class="btn btn-default btn-danger btn-xs action-button"
                            data-toggle="confirmation"
                            data-title="Deseja Deletar?"
                            data-singleton="true"
