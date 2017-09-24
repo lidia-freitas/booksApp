@@ -19,7 +19,7 @@ body {
 }
 
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 580px) {
     body {
         /* Margin bottom by footer height */
         margin-bottom: 150px;
