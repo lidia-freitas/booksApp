@@ -1,4 +1,4 @@
-<?php include $_SERVER["DOCUMENT_ROOT"] . '/booksApp/lock.php';
+<?php include '../lock.php';
 /**
  * Created by PhpStorm.
  * User: Lidia Freitas
@@ -18,11 +18,11 @@
 </head>
 <body>
 <?php $active_page  = 'gerenciar-livros' ?>
-<?php include $_SERVER["DOCUMENT_ROOT"] . '/booksApp/partials/menu.php' ?>
-<?php include $_SERVER["DOCUMENT_ROOT"] . '/booksApp/books/script_books_manage.php' ?>
+<?php include '../partials/menu.php' ?>
+<?php include 'script_books_manage.php' ?>
 
 <div class="container">
-    <div class="col-md-12 text-center"><?php include $_SERVER["DOCUMENT_ROOT"] . '/booksApp/partials/feedbacks.php' ?></div>
+    <div class="col-md-12 text-center"><?php include '../partials/feedbacks.php' ?></div>
 
     <div class="page-header">
         <h1 class="text text-info">Gerenciar livros </h1>

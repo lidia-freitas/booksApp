@@ -6,14 +6,14 @@
  * Time: 00:34
  */
 
-include $_SERVER["DOCUMENT_ROOT"] . '/booksApp/lock.php';
+include '../lock.php';
 
 if($_POST['user_id'] != $_SESSION['user_id'] && $_SESSION['role'] != 0){
     header('location:books_edit.php?id=' . $_POST['book_id'] . '&msg=denied');
 } elseif (empty($_POST['book_id']) || empty($_POST['title']) || empty($_POST['author']) || empty($_POST['release-year']) || empty($_POST['genre'])) {
     header('location:movies_edit.php?id=' . $_POST['book_id'] . '&msg=empty');
 } else {
-    include $_SERVER["DOCUMENT_ROOT"] . '/booksApp/conn.php';
+    include '../conn.php';
 
     $book_id      = $_POST['book_id'];
     $title        = $_POST['title'];

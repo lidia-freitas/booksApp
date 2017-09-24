@@ -13,7 +13,7 @@ if (isset($_GET['title'])) {
     $title = $_GET['title'];
     $user_id = $_SESSION['user_id'];
 
-    include $_SERVER["DOCUMENT_ROOT"] . '/booksApp/conn.php';
+    include '../conn.php';
 
     $getData = "SELECT book_id, title, author, releaseYear, genre, name
                 FROM books

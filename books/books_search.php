@@ -1,4 +1,4 @@
-<?php include $_SERVER["DOCUMENT_ROOT"] . '/booksApp/authentication/verify_session.php';
+<?php include '../authentication/verify_session.php';
 /**
  * Created by PhpStorm.
  * User: Lidia Freitas
@@ -17,11 +17,11 @@
     <title>Cloud - Books App - Buscar livros</title>
 </head>
 <body>
-<?php include $_SERVER["DOCUMENT_ROOT"] . '/booksApp/partials/menu.php' ?>
-<?php include $_SERVER["DOCUMENT_ROOT"] . '/booksApp/books/script_books_search.php' ?>
+<?php include '../partials/menu.php' ?>
+<?php include 'script_books_search.php' ?>
 
 <div class="container">
-    <div class="col-md-12"><?php include $_SERVER["DOCUMENT_ROOT"] . '/booksApp/partials/feedbacks.php' ?></div>
+    <div class="col-md-12"><?php include '../partials/feedbacks.php' ?></div>
 
     <div class="page-header">
         <h1 class="text text-info">Buscar livros </h1>

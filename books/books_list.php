@@ -1,4 +1,4 @@
-<?php include $_SERVER["DOCUMENT_ROOT"] . '/booksApp/authentication/verify_session.php';
+<?php include '../authentication/verify_session.php';
 /**
  * Created by PhpStorm.
  * User: Lidia Freitas
@@ -19,13 +19,12 @@
 <body>
 <?php $active_page  = 'listar-livros' ?>
 
-<?php include $_SERVER["DOCUMENT_ROOT"] . '/booksApp/partials/menu.php' ?>
-<?php include $_SERVER["DOCUMENT_ROOT"] . '/booksApp/books/script_books_list.php' ?>
+<?php include '../partials/menu.php' ?>
+<?php include 'script_books_list.php' ?>
 
 <div class="container">
-    <div class="col-md-12 text-center"><?php include $_SERVER["DOCUMENT_ROOT"] . '/booksApp/partials/feedbacks.php' ?></div>
-    <?php echo $_SERVER["DOCUMENT_ROOT"]; ?> <br>
-    <?php echo dirname(__FILE__); ?>
+    <div class="col-md-12 text-center"><?php include '../partials/feedbacks.php' ?></div>
+
     <div class="page-header">
         <h1 class="text text-info">Lista de livros</h1>
     </div>

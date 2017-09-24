@@ -1,4 +1,4 @@
-<?php include $_SERVER["DOCUMENT_ROOT"] . '/booksApp/lock.php';
+<?php include '../lock.php';
 /**
  * Created by PhpStorm.
  * User: Lidia Freitas
@@ -18,11 +18,11 @@
     <title>Cloud - Books App - Alterar senha</title>
 </head>
 <body>
-<?php include $_SERVER["DOCUMENT_ROOT"] . '/booksApp/partials/menu.php' ?>
-<?php include $_SERVER["DOCUMENT_ROOT"] . '/booksApp/users/script_users_get_one.php' ?>
+<?php include '../partials/menu.php' ?>
+<?php include 'script_users_get_one.php' ?>
 
 <div class="container">
-    <div class="col-md-12"><?php include $_SERVER["DOCUMENT_ROOT"] . '/booksApp/partials/feedbacks.php' ?></div>
+    <div class="col-md-12"><?php include '../partials/feedbacks.php' ?></div>
 
     <div class="page-header">
         <h1 class="text text-info">Alterar senha</h1>

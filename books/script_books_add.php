@@ -6,12 +6,12 @@
  * Time: 00:34
  */
 
-include $_SERVER["DOCUMENT_ROOT"] . '/booksApp/lock.php';
+include '../lock.php';
 
 if (empty($_POST['title']) || empty($_POST['author']) || empty($_POST['release-year']) || empty($_POST['genre'])) {
     header('location:books_add.php?msg=empty');
 } else {
-    include $_SERVER["DOCUMENT_ROOT"] . '/booksApp/conn.php';
+    include '../conn.php';
 
     $title        = $_POST['title'];
     $author       = $_POST['author'];

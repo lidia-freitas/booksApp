@@ -10,7 +10,7 @@ if (empty($_POST['name']) || empty($_POST['password'])) {
     header('location:login.php?msg=empty');
 } else {
 
-    include $_SERVER["DOCUMENT_ROOT"] . '/booksApp/conn.php';
+    include '../conn.php';
 
     $user = $_POST['name'];
     $password = $_POST['password'];

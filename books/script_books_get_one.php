@@ -6,7 +6,7 @@
  * Time: 00:48
  */
 
-include $_SERVER["DOCUMENT_ROOT"] . '/booksApp/conn.php';
+include '../conn.php';
 
 $book_id = $_GET['id'];
 
