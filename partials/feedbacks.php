@@ -38,5 +38,13 @@ if (isset($_GET['msg'])) {
         echo '<p class="alert alert-warning">
               <i class="glyphicon glyphicon-exclamation-sign"></i> A senha atual está incorreta
               </p>';
+    } else if ($msg == "error-vote") {
+        echo '<p class="alert alert-danger">
+              <i class="glyphicon glyphicon-exclamation-sign"></i> Não foi possível registrar seu voto no momento. Tente novamente mais tarde.
+              </p>';
+    } else if ($msg == "success-vote") {
+        echo '<p class="alert alert-success">
+              <i class="glyphicon glyphicon-exclamation-sign"></i> Voto registrado com sucesso.
+              </p>';
     }
 }

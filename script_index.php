@@ -8,7 +8,7 @@
 
 include 'conn.php';
 
-$getData = "SELECT books.book_id, books.title, books.author, books.releaseYear, books.genre, users.name
+$getData = "SELECT books.book_id, books.title, books.author, books.releaseYear, books.genre, books.votes, users.name
         FROM books
         INNER JOIN users
         WHERE books.user_id = users.user_id

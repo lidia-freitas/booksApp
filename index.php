@@ -14,6 +14,7 @@ $is_logged = isset($_SESSION['user']) && isset($_SESSION['password']);
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="bootstrap/css/sticky-footer.css">
+    <link rel="stylesheet" href="assets/main.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Cloud - Projeto Final - Últimos Livros</title>
 </head>
@@ -36,20 +37,23 @@ $is_logged = isset($_SESSION['user']) && isset($_SESSION['password']);
 
         <ul class="nav navbar-nav navbar-right">
             <?php if ($is_logged): ?>
-            <li role="presentation" class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-                   aria-expanded="false">
-                    <?php echo $_SESSION['user'] ?>  <span class="caret"></span>
-                </a>
+                <li role="presentation" class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                       aria-expanded="false">
+                        <?php echo $_SESSION['user'] ?> <span class="caret"></span>
+                    </a>
 
-                <ul class="dropdown-menu">
-                    <li><a href="users/users_edit.php"><i class="fa fa-cog" aria-hidden="true"></i> Gerenciar perfil</a></li>
-                    <li><a href="users/users_change_password.php"><i class="fa fa-key" aria-hidden="true"></i> Alterar Senha</a></li>
-                    <li><a href="authentication/logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
-                </ul>
-            </li>
+                    <ul class="dropdown-menu">
+                        <li><a href="users/users_edit.php"><i class="fa fa-cog" aria-hidden="true"></i> Gerenciar perfil</a>
+                        </li>
+                        <li><a href="users/users_change_password.php"><i class="fa fa-key" aria-hidden="true"></i>
+                                Alterar Senha</a></li>
+                        <li><a href="authentication/logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+                        </li>
+                    </ul>
+                </li>
             <?php else: ?>
-            <li><a href="authentication/login.php"><i class="fa fa-sign-in" aria-hidden="true"></i>  Login</a></li>
+                <li><a href="authentication/login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a></li>
             <?php endif; ?>
         </ul>
     </div>
@@ -65,39 +69,41 @@ $is_logged = isset($_SESSION['user']) && isset($_SESSION['password']);
         <span><b>Professor:</b> Carlos Henrique Kuretzki</span>
         <br>
         <br>
-        <p><a class="btn btn-primary btn-lg" href="https://github.com/lidia-freitas/booksApp" role="button" target="_blank">
+        <p><a class="btn btn-primary btn-lg" href="https://github.com/lidia-freitas/booksApp" role="button"
+              target="_blank">
                 <i class="fa fa-github" aria-hidden="true"></i> Github</a></p>
     </div>
 
-    <div class="col-md-10"><?php include 'partials/feedbacks.php' ?></div>
+    <div class="col-md-12"><?php include 'partials/feedbacks.php' ?></div>
 
-    <h1 class="col-md-12 text text-info">Últimos livros</h1>
-
-    <br>
-    <div class="col-md-12">
-        <table class="table ">
-            <thead>
-            <tr>
-                <th>Id</th>
-                <th>Titulo</th>
-                <th>Autor</th>
-                <th>Ano de Lançamento</th>
-                <th>Gênero</th>
-                <th>Usuário</th>
-            </tr>
-            </thead>
-            <tbody>
-            <?php while ($result = mysqli_fetch_assoc($query)) { ?>
-                <tr>
-                    <?php foreach ($result as $value) { ?>
-                        <td><?php echo $value ?></td>
-                    <?php } ?>
-                </tr>
-            <?php } ?>
-            </tbody>
-        </table>
+    <div class="page-header">
+        <h1 class="text text-info">Últimos livros</h1>
     </div>
 
+    <br>
+
+    <?php while ($result = mysqli_fetch_assoc($query)) : ?>
+        <form class="col-md-4 books-list" action="script_vote.php" method="post">
+            <input type="hidden" name="book_id" value="<?php echo $result['book_id']?>">
+            <div class="cover">
+                <h1 class="text-muted thumbnail">
+                    <i class="fa fa-book" aria-hidden="true"></i>
+                </h1>
+            </div>
+            <div class="content">
+                <p class="text text-info title"><?php echo $result['title']; ?></p>
+                <ul>
+                    <li><strong>Autor: </strong><?php echo $result['author']; ?></li>
+                    <li><strong>Ano de Lançamento: </strong><?php echo $result['releaseYear']; ?></li>
+                    <li><strong>Gênero: </strong><?php echo $result['genre']; ?></li>
+                    <li><strong>Cadastrado por: </strong><?php echo $result['name']; ?></li>
+                </ul>
+                <p>
+                    <button class="btn btn-sm btn-danger vote"><i class="fa fa-heart"></i> <?php echo $result['votes'] ;?> votos</button>
+                </p>
+            </div>
+        </form>
+    <?php endwhile; ?>
 </div>
 
 <footer class="footer">

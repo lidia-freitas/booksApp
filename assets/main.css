@@ -1,0 +1,31 @@
+.books-list {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 40px;
+    max-height: 200px;
+}
+
+.books-list .cover {
+    display: flex;
+    align-items: flex-start;
+}
+
+.books-list .cover h1{
+    margin: 0;
+    font-size: 100px;
+    padding: 4px 15px;
+}
+
+.books-list .content {
+    flex-grow: 1;
+    padding: 0 15px;
+}
+.books-list .content .title{
+    font-weight: bold;
+}
+
+.books-list .content ul{
+    list-style-type: none;
+    padding: 0;
+    font-size: 12px;
+}
