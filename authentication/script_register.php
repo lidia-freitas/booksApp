@@ -23,47 +23,52 @@ if (empty($_POST['name']) || empty($_POST['password']) || empty($_POST['email'])
     $sql = "INSERT INTO users (name, email, password, role)
 	VALUES ('$name', '$email', '$security', '$role')";
 
-    mysqli_query($conn, $sql);
+    //mysqli_query($conn, $sql);
 
-    $rows = mysqli_affected_rows($conn);
-    if ($rows > 0) {
-        include "../mail.php";
-        require_once('../vendor/phpmailer/phpmailer/PHPMailerAutoload.php'); //chama a classe de onde você a colocou.
-        $mail = new PHPMailer(); // instancia a classe PHPMailer
+    if (!$conn->query($sql)) {
+        $error = mysqli_error($conn);
+        header('location:register.php?msg=duplicated&error='.$error);
+    } else {
+        $rows = mysqli_affected_rows($conn);
+        if ($rows > 0) {
+            include "../mail.php";
+            require_once('../vendor/phpmailer/phpmailer/PHPMailerAutoload.php'); //chama a classe de onde você a colocou.
+            $mail = new PHPMailer(); // instancia a classe PHPMailer
 
-        $mail->IsSMTP();
-        $mail->CharSet = 'UTF-8';
+            $mail->IsSMTP();
+            $mail->CharSet = 'UTF-8';
 
-        //configuração do servidor remetente
-        $mail->Port = '587'; //porta usada pelo email.
-        $mail->Host = 'email-smtp.us-east-1.amazonaws.com'; //'smtp.email.com';
-        $mail->IsHTML(true);
-        $mail->Mailer = 'smtp';
-        $mail->SMTPSecure = 'tls';
+            //configuração do servidor remetente
+            $mail->Port = '587'; //porta usada pelo email.
+            $mail->Host = 'email-smtp.us-east-1.amazonaws.com'; //'smtp.email.com';
+            $mail->IsHTML(true);
+            $mail->Mailer = 'smtp';
+            $mail->SMTPSecure = 'tls';
 
-        //configuração do usuário remetente
-        $mail->SMTPAuth = true;
-        $mail->Username = $SMTP_Username;
-        $mail->Password = $SMTP_Password;
+            //configuração do usuário remetente
+            $mail->SMTPAuth = true;
+            $mail->Username = $SMTP_Username;
+            $mail->Password = $SMTP_Password;
 
-        $mail->SingleTo = true;
+            $mail->SingleTo = true;
 
-        $mail->From = $MAIL_address_sender;
-        $mail->FromName = "BooksApp";
+            $mail->From = $MAIL_address_sender;
+            $mail->FromName = "BooksApp";
 
-        $mail->addAddress($MAIL_address_recipient); // email do destinatario.
+            $mail->addAddress($MAIL_address_recipient); // email do destinatario.
 
-        $mail->Subject = "Mensagem enviada pelo site www.booksApp.com.br";
-        $mail->Body = "Um novo usuário se cadastrou no BooksApp. <br>
+            $mail->Subject = "Mensagem enviada pelo site www.booksApp.com.br";
+            $mail->Body = "Um novo usuário se cadastrou no BooksApp. <br>
             <strong>Nome do usuário: </strong> {$name}<br>
             <strong>Email: </strong> {$email}";
 
-        if ($mail->Send()) {
-            header('location:login.php?msg=success');
+            if ($mail->Send()) {
+                header('location:login.php?msg=success');
+            } else {
+                header('location:login.php?msg=noemail');
+            }
         } else {
-           header('location:login.php?msg=noemail');
+            header('location:register.php?msg=error');
         }
-    } else {
-        header('location:register.php?msg=error');
     }
 }

@@ -115,3 +115,13 @@ ALTER TABLE `books`
 -- Inserção de novo campo `votes` para a tabela `books`
 --
 ALTER TABLE `books` ADD `votes` INT NOT NULL DEFAULT '0' AFTER `genre`;
+
+--
+-- Setando campo name como unique na tabela `users`
+--
+ALTER TABLE `users` ADD UNIQUE(`name`);
+
+--
+-- Setando campo email como unique na tabela `users`
+--
+ALTER TABLE `users` ADD UNIQUE(`email`);

@@ -46,5 +46,10 @@ if (isset($_GET['msg'])) {
         echo '<p class="alert alert-success">
               <i class="glyphicon glyphicon-exclamation-sign"></i> Voto registrado com sucesso.
               </p>';
+    } else if ($msg == "duplicated") {
+        $txt = $_GET['error'];
+        echo '<p class="alert alert-warning">
+              <i class="glyphicon glyphicon-exclamation-sign"></i> Já existe um usuário cadastrado com esses dados <br> '.$txt.'
+              </p>';
     }
 }
